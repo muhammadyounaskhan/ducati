@@ -1,0 +1,14 @@
+# Don't ignore the .gitignore file
+*
+!.gitignore
+
+# Don't ignore the index.html file
+!index.html
+
+# Don't ignore the css folder and its contents
+!/css/
+!/css/**
+
+# Don't ignore the images folder and its contents
+!/images/
+!/images/**
