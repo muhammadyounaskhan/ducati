@@ -7,13 +7,16 @@ console.log(width);
 slides_div.style.width = `${width}%`;
 console.log(slides);
 setInterval(() => {
-    if (curSlide < number_slides) {
-        slides[curSlide].style.transform = `translateX(-${curSlide * 100}%)`
-        curSlide += 1;
+    if (curSlide == 1) {
+        slides[0].style.transform = `translateX(-${100}%)`
+        slides[1].style.transform = `translateX(-100%)`;
+        curSlide = 0;
     }
     else {
-        slides[curSlide - 1].style.transform =
-            `translateX(${100}%)`;
-        curSlide -= 1;
+        slides[0].style.transform =
+            `translateX(${0}%)`;
+        slides[1].style.transform =
+            `translateX(${0}%)`;
+        curSlide = 1;
     }
 }, 5000);
