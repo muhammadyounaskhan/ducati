@@ -523,11 +523,17 @@ img {
   font-weight: 400;
   margin-bottom: 1.4rem;
 }
+@media screen and (max-width: 600px) {
+  .info_slide-1 p {
+    display: none;
+  }
+}
 
 .red_button {
   background-color: #e90000;
   border: none;
   font-size: 1rem;
+  min-width: 200px;
   font-weight: 600;
   color: #fafafa;
   text-transform: uppercase;
@@ -542,6 +548,7 @@ img {
 @media screen and (max-width: 1000px) {
   .red_button__position {
     right: 76%;
+    left: 2rem;
   }
 }
 
