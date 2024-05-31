@@ -12,3 +12,4 @@
 # Don't ignore the images folder and its contents
 !/images/
 !/images/**
+!script.js
