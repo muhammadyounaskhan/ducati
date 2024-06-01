@@ -444,7 +444,7 @@ img {
   margin-inline: auto;
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 85px;
   color: #fafafa;
   position: absolute;
   left: 50%;
@@ -533,6 +533,15 @@ img {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  width: 95.5%;
+  background-color: #fafafa;
+  height: 6.5rem;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1.5rem;
 }
 
 .top-nav {
@@ -544,7 +553,7 @@ img {
 
 .nav-left {
   display: flex;
-  column-gap: 1rem;
+  column-gap: 2rem;
 }
 
 .top-nav,
@@ -554,6 +563,10 @@ img {
   align-items: center;
   font-weight: 500;
   font-size: 0.8rem;
+}
+
+.links {
+  column-gap: 2rem;
 }
 
 .nav_left {
@@ -569,6 +582,10 @@ img {
 .links_item a {
   color: #000;
   text-transform: uppercase;
+}
+.links img {
+  width: 55px;
+  margin-left: 4rem;
 }
 
 .red_button {
@@ -592,16 +609,6 @@ img {
     right: 76%;
     left: 2rem;
   }
-}
-
-.floated-nav {
-  width: 95%;
-  background-color: #fafafa;
-  height: 6.5rem;
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 #checkbox {
