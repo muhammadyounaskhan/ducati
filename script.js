@@ -32,7 +32,9 @@ const bottomNav = document.querySelector('.bottom-nav');
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
         bottomNav.classList.add('height');
+        bottomNav.classList.remove('display');
     } else {
         bottomNav.classList.remove('height');
+        bottomNav.classList.add('display');
     }
 });
