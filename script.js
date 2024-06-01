@@ -27,3 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         menuIcon.classList.toggle('open');
     });
 });
+const checkbox = document.getElementById('checkbox');
+const bottomNav = document.querySelector('.bottom-nav');
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        bottomNav.classList.add('height');
+    } else {
+        bottomNav.classList.remove('height');
+    }
+});
