@@ -330,7 +330,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: rgb(229, 0, 80);
+  color: #cc0000;
   text-decoration: none;
 }
 a:hover, a:active, a:focus, a:focus-within {
@@ -533,6 +533,7 @@ img {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -4px 8px rgba(0, 0, 0, 0.2);
   width: 95.5%;
   background-color: #fafafa;
   height: 6.5rem;
@@ -541,6 +542,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 1.5rem;
+  z-index: 4000;
 }
 @media screen and (max-width: 980px) {
   .floated-nav {
@@ -559,6 +561,8 @@ img {
   height: 0;
   overflow: hidden;
   background-color: #fafafa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5001;
   width: 95.5%;
   left: 50%;
   transform: translateX(-50%);
@@ -668,17 +672,37 @@ img {
 
 .showcase {
   padding-top: 7rem;
+  overflow: auto;
 }
 
-.margin-auto {
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
-  margin-bottom: 4rem;
+.showcase::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+  height: 5px;
+}
+
+.showcase::-webkit-scrollbar-track {
+  background: #e1e1e1; /* Color of the scrollbar track */
+  height: 3px;
+  border-radius: 5px;
+  width: 95vw;
+}
+
+.showcase::-webkit-scrollbar-thumb {
+  background: #cc0000; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  width: 20px; /* Thicker width when hovered */
+  scrollbar-width: auto;
+  scrollbar-width: thin;
 }
 
 .cards {
   padding-inline: 1.5rem;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
   display: flex;
 }
 
@@ -689,6 +713,7 @@ img {
   margin-right: 2rem;
   position: relative;
   overflow: visible;
+  cursor: pointer;
 }
 
 .image-container {
@@ -721,6 +746,10 @@ img {
   opacity: 0;
 }
 
+.card:hover .name {
+  border-bottom: 2px solid #cc0000;
+}
+
 .card-content {
   display: flex;
   justify-content: space-between;
@@ -731,6 +760,102 @@ img {
 .name {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+.heading-gray {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  margin: 6rem 0;
+  min-width: 40%;
+  color: #bbbcbc;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.heading-gray::before,
+.heading-gray::after {
+  content: "";
+  width: 15%;
+  height: 1px;
+  background-color: #bbbcbc;
+  display: flex;
+}
+
+.testimonial-container {
+  width: 95.5%;
+  margin-inline: auto;
+}
+.testimonial-container .testimonial {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+}
+.testimonial-container .left-t {
+  flex: 1 1 50%;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.testimonial-container .right-t {
+  flex: 1 1 50%;
+  min-width: 450px;
+}
+.testimonial-container .right-t img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (max-width: 956px) {
+  .testimonial-container .right-t img {
+    width: 100%;
+  }
+}
+.testimonial-container .catagory {
+  font-size: 0.8rem;
+  color: rgb(68, 68, 68);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+.testimonial-container .title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #0f0f0f;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+.testimonial-container .description {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.testimonial-container .name-driver {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #cc0000;
+  text-transform: uppercase;
+}
+
+.testimonial:last-child {
+  border-left: 3px solid #cc0000;
+}
+@media screen and (max-width: 956px) {
+  .testimonial:last-child {
+    border-left: none;
+    border-top: 3px solid #cc0000;
+  }
+}
+
+.gallery {
+  padding: 3rem 0;
 }
 
 .red_button {
@@ -835,6 +960,15 @@ img {
   border-radius: 100px;
 }
 
+.container-btn {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .new-btn {
   background-color: #cc0000;
   padding: 0.4rem 1rem;
@@ -844,8 +978,8 @@ img {
   font-weight: 500;
   text-transform: uppercase;
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: -30px;
+  left: 10px;
   z-index: 300;
 }
 
