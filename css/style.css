@@ -1,9 +1,9 @@
-@keyframes increaseBorder {
+@keyframes increaseHeight {
   from {
-    border-right-width: 5px;
+    height: 0;
   }
   to {
-    border-right-width: 50px; /* Final border width */
+    height: 100%;
   }
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1017,14 +1017,32 @@ img {
   text-transform: uppercase;
 }
 
-.testimonial {
-  border-left: 3px solid #cc0000;
-}
 @media screen and (max-width: 956px) {
   .testimonial {
     border-left: none;
-    border-top: 3px solid #cc0000;
   }
+  .testimonial:first-child::before {
+    display: none;
+  }
+}
+
+.testimonial:first-child:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  border: 2px solid #cc0000;
+  animation: increaseHeight 5s ease-in infinite forwards;
+}
+
+.testimonial:last-child:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  border: 2px solid #cc0000;
 }
 
 .gallery {
