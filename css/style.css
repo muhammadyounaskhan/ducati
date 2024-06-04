@@ -675,9 +675,14 @@ img {
 
 .footer {
   padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
   padding-inline: 3rem;
   background-color: #0f0f0f;
+}
+@media screen and (max-width: 980px) {
+  .footer {
+    padding-bottom: 0;
+  }
 }
 @media screen and (max-width: 610px) {
   .footer {
@@ -693,7 +698,7 @@ img {
   text-align: center;
   margin-inline: auto;
   margin-bottom: 2rem;
-  width: 80%;
+  width: 70%;
 }
 .footer_links {
   display: flex;
@@ -936,13 +941,15 @@ img {
   margin-inline: auto;
 }
 .testimonial-container .testimonial {
+  position: relative;
+}
+.testimonial-container .testimonial-wrapper {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 -2px 8px rgba(0, 0, 0, 0.2);
   margin-top: 4rem;
 }
-.testimonial-container .testimonial .dots {
+.testimonial-container .dots {
   position: absolute;
   top: 50%;
   left: 1.7rem;
@@ -951,20 +958,20 @@ img {
   row-gap: 0.2rem;
 }
 @media screen and (max-width: 956px) {
-  .testimonial-container .testimonial .dots {
+  .testimonial-container .dots {
     flex-direction: row-reverse;
     top: 1.7rem;
     left: 50%;
     column-gap: 0.4rem;
   }
 }
-.testimonial-container .testimonial .dot {
+.testimonial-container .dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 100px;
   border: 1px solid rgb(68, 68, 68);
 }
-.testimonial-container .testimonial .dot-filled {
+.testimonial-container .dot-filled {
   background-color: #cc0000;
   border: 1px solid #cc0000;
 }
@@ -1018,15 +1025,12 @@ img {
 }
 
 @media screen and (max-width: 956px) {
-  .testimonial {
-    border-left: none;
-  }
-  .testimonial:first-child::before {
+  .testimonial-wrapper:first-child::before {
     display: none;
   }
 }
 
-.testimonial:first-child:before {
+.testimonial:first-child .testimonial-wrapper::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1036,13 +1040,22 @@ img {
   animation: increaseHeight 5s ease-in infinite forwards;
 }
 
-.testimonial:last-child:before {
+.testimonial-wrapper:last-child:before {
   content: "";
   position: absolute;
   left: 0;
   width: 1px;
   height: 100%;
   border: 2px solid #cc0000;
+}
+@media screen and (max-width: 956px) {
+  .testimonial-wrapper:last-child:before {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none !important;
 }
 
 .gallery {

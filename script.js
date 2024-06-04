@@ -38,3 +38,37 @@ checkbox.addEventListener('change', () => {
         bottomNav.classList.add('display');
     }
 });
+
+/*
+#<=====================================================>
+#                 TESTIMONIAL SECTION CODE
+#<=====================================================>
+*/
+//#<============[Variables]============>#
+const testimonial1 = document.getElementById("testimonial-1");
+const wrapper1 = document.getElementById("wrapper-1");
+const wrapper2 = document.getElementById("wrapper-2");
+const dot1 = document.getElementsByClassName("dot")[0];
+const dot2 = document.getElementsByClassName("dot")[1];
+//#<============[function]============>#
+function change() {
+    wrapper1.classList.toggle('hidden');
+    wrapper2.classList.toggle('hidden');
+    dot1.classList.toggle('dot-filled');
+    dot2.classList.toggle('dot-filled');
+}
+setInterval(() => {
+    wrapper1.classList.toggle('hidden');
+    wrapper2.classList.toggle('hidden');
+    dot1.classList.toggle('dot-filled');
+    dot2.classList.toggle('dot-filled');
+}, 5000);
+
+
+dot1.addEventListener('click', () => {
+    change();
+});
+dot2.addEventListener('click', () => {
+    change();
+});
+
