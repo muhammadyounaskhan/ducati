@@ -1034,16 +1034,21 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  width: 1px;
+  width: 2px;
   height: 100%;
   border: 2px solid #cc0000;
   animation: increaseHeight 5s ease-in infinite forwards;
+}
+@media screen and (max-width: 956px) {
+  .testimonial:first-child .testimonial-wrapper::before {
+    display: none;
+  }
 }
 
 .testimonial-wrapper:last-child:before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 0px;
   width: 1px;
   height: 100%;
   border: 2px solid #cc0000;

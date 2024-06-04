@@ -58,10 +58,14 @@ function change() {
     dot2.classList.toggle('dot-filled');
 }
 setInterval(() => {
-    wrapper1.classList.toggle('hidden');
-    wrapper2.classList.toggle('hidden');
-    dot1.classList.toggle('dot-filled');
-    dot2.classList.toggle('dot-filled');
+    const width = innerWidth;
+    if (width > 956) {
+        wrapper1.classList.toggle('hidden');
+        wrapper2.classList.toggle('hidden');
+        dot1.classList.toggle('dot-filled');
+        dot2.classList.toggle('dot-filled');
+    }
+
 }, 5000);
 
 
