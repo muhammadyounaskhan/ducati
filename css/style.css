@@ -685,12 +685,12 @@ img {
 }
 @media screen and (max-width: 610px) {
   .footer {
-    padding: 1rem;
+    padding-inline: 1rem;
   }
 }
 @media screen and (max-width: 550px) {
   .footer {
-    padding: 0;
+    padding-inline: 0;
   }
 }
 .footer_logo {
