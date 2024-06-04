@@ -20,17 +20,15 @@ setInterval(() => {
         curSlide = 1;
     }
 }, 5000);
-document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.getElementById('menu-icon');
 
-    menuIcon.addEventListener('click', () => {
-        menuIcon.classList.toggle('open');
-    });
-});
 const checkbox = document.getElementById('checkbox');
 const bottomNav = document.querySelector('.bottom-nav');
+const windowWidth = window.innerWidth;
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
+        if (windowWidth <= 850) {
+            bottomNav.style.height = "auto";
+        }
         bottomNav.classList.add('height');
         bottomNav.classList.remove('display');
     } else {

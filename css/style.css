@@ -615,11 +615,6 @@ img {
   column-gap: 2rem;
 }
 
-@media screen and (max-width: 850px) {
-  .bottom-nav {
-    height: auto;
-  }
-}
 .bottom-nav .links {
   display: flex;
   column-gap: 2rem;
@@ -680,6 +675,7 @@ img {
 
 .footer {
   padding-top: 3rem;
+  padding-bottom: 1rem;
   padding-inline: 3rem;
   background-color: #0f0f0f;
 }
