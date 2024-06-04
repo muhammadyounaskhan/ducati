@@ -28,11 +28,13 @@ checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
         if (windowWidth <= 850) {
             bottomNav.style.height = "auto";
+            console.log(windowWidth);
+        } else if (windowWidth > 850) {
+            bottomNav.style.height = "6.5rem";
+            console.log(windowWidth);
         }
-        bottomNav.classList.add('height');
         bottomNav.classList.remove('display');
     } else {
-        bottomNav.classList.remove('height');
         bottomNav.classList.add('display');
     }
 });
