@@ -906,7 +906,7 @@ img {
 }
 
 .card:hover .name {
-  border-bottom: 2px solid #cc0000;
+  border-bottom: 3px solid #cc0000;
 }
 
 .card-content {
@@ -924,6 +924,7 @@ img {
 .shop-card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
+  position: relative;
   display: flex;
   /*#<============[Left part]============>#*/
   /*#<============[Right Part]============>#*/
@@ -933,12 +934,49 @@ img {
     flex-direction: column;
     width: 95.5%;
     padding: 1.5rem;
+    padding-top: 3.5rem;
     margin-inline: auto;
+  }
+}
+.shop-card .arrows {
+  position: absolute;
+  right: 22px;
+  bottom: 30px;
+  display: flex;
+  width: 40px;
+  column-gap: 25px;
+  align-items: center;
+}
+.shop-card .arrows .arrow-small-left,
+.shop-card .arrows .arrow-small-right {
+  width: 7px;
+}
+@media screen and (max-width: 1000px) {
+  .shop-card .arrows {
+    bottom: auto;
+    right: auto;
+    left: 1.5rem;
+    top: 20px;
+  }
+}
+.shop-card .icon--modal-close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .shop-card .icon {
+    width: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .shop-card .shop-image-container {
   width: 50%;
   position: relative;
+  min-height: 250px;
 }
 @media screen and (max-width: 1000px) {
   .shop-card .shop-image-container {
@@ -952,11 +990,12 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.01));
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  justify-content: center;
+  row-gap: 1rem;
 }
 @media screen and (max-width: 1000px) {
   .shop-card .shop-image-container .terms_box {
@@ -996,6 +1035,10 @@ img {
 .shop-card .shop_content {
   padding: 10px 20px;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
 }
 @media screen and (max-width: 1000px) {
   .shop-card .shop_content {
@@ -1004,35 +1047,36 @@ img {
     padding-top: 2rem;
   }
 }
-.shop-card .shop_content .title-cross {
+.shop-card .title-cross {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-}
-.shop-card .shop_content .title {
-  font-size: 22px;
-  font-weight: 500;
-}
-.shop-card .shop_content .icon {
-  width: 20px;
-}
-.shop-card .shop_content .description-inner {
-  font-size: 17px;
-  font-weight: 400;
   margin-bottom: 4rem;
 }
-.shop-card .shop_content .price-wrapper {
+.shop-card .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.shop-card .icon {
+  width: 20px;
+}
+.shop-card .description-inner {
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 5rem;
+}
+.shop-card .price-wrapper {
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
-.shop-card .shop_content .price {
+.shop-card .price {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
-.shop-card .shop_content .info_cirle {
+.shop-card .info_cirle {
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -1044,56 +1088,11 @@ img {
   align-items: center;
   border-radius: 100px;
 }
-.shop-card .shop_content .buttons {
+.shop-card .buttons {
   display: flex;
   column-gap: 1rem;
 }
 
-.arrow-cross-wrapper {
-  display: flex;
-  justify-content: space-between;
-  display: none;
-}
-
-.arrows {
-  display: flex;
-  width: 40px;
-  column-gap: 25px;
-  align-items: center;
-}
-.arrows .arrow-small-left,
-.arrows .arrow-small-right {
-  width: 7px;
-}
-
-@media screen and (max-width: 1000px) {
-  .arrow-cross-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-  }
-  .icon {
-    width: 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.button_arrow_wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 1000px) {
-  .button_arrow_wrapper .arrows {
-    display: none;
-  }
-  .button_arrow_wrapper .icon-2 {
-    display: none;
-  }
-}
 .heading-gray {
   position: relative;
   text-align: center;
@@ -1227,7 +1226,7 @@ img {
   }
 }
 
-.testimonial-animation:last-child:before {
+.testimonial-wrapper:last-child::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -1236,7 +1235,7 @@ img {
   background-color: #cc0000;
 }
 @media screen and (max-width: 956px) {
-  .testimonial-animation:last-child:before {
+  .testimonial-wrapper:last-child::before {
     display: none;
   }
 }

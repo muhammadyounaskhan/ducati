@@ -76,3 +76,26 @@ dot2.addEventListener('click', () => {
     change();
 });
 
+/*
+#<=====================================================>
+#                 Shoping Card JavaScript
+#<=====================================================>
+*/
+
+const circularButtons = document.getElementsByClassName('circular-button');
+const closeBtn = document.querySelector('.icon-1');
+const shopCard = document.querySelector('.shop-card');
+closeBtn.addEventListener('click', () => {
+    shopCard.classList.add('hidden');
+});
+Array.from(circularButtons).forEach(button => {
+    button.addEventListener('click', () => {
+        if (button.textContent == '+') {
+            button.textContent = '-';
+            shopCard.classList.remove('hidden');
+        } else {
+            button.textContent = "+";
+            shopCard.classList.add('hidden');
+        }
+    });
+});
