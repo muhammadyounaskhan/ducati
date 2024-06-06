@@ -1062,8 +1062,8 @@ img {
   column-gap: 25px;
   align-items: center;
 }
-.arrows #arrow-small-left,
-.arrows #arrow-small-right {
+.arrows .arrow-small-left,
+.arrows .arrow-small-right {
   width: 7px;
 }
 
