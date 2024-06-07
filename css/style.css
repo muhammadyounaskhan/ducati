@@ -712,7 +712,7 @@ img {
 .sub_links .sub_links_right {
   width: 22%;
 }
-.sub_links a .sub_link_content {
+.sub_links .sub_link_content {
   padding: 2rem;
   min-height: 300px;
   background-color: #ebebeb;
