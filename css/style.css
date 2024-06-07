@@ -542,6 +542,7 @@ img {
   align-items: center;
   column-gap: 1rem;
   width: 95.5%;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
   background-color: #fafafa;
   height: 6.5rem;
   position: fixed;
@@ -695,28 +696,26 @@ img {
   left: 0;
   display: none;
   transition: all 0.2s;
+  height: 26rem;
+  overflow: auto;
   /*#<============[bikes]============>#*/
 }
 .sub_links .sub_links_left {
   width: 80%;
   padding: 3.5rem;
   display: flex;
+  padding-bottom: 5rem;
   flex-wrap: wrap;
   column-gap: 2rem;
   row-gap: 2rem;
-  overflow: auto;
 }
 .sub_links .sub_links_right {
-  width: 25%;
-  border-left: 1px solid #ddd;
-  min-height: 300px;
+  width: 22%;
 }
-.sub_links .side_link_img_container {
-  width: 100%;
-}
-.sub_links .sub_link_content {
+.sub_links a .sub_link_content {
   padding: 2rem;
-  min-height: 200px;
+  min-height: 300px;
+  background-color: #ebebeb;
 }
 .sub_links .sub_link_title {
   font-size: 1rem;
