@@ -20,24 +20,33 @@ setInterval(() => {
         curSlide = 1;
     }
 }, 5000);
-
+/*
+#<=====================================================>
+#                 FLOATED NAVIGATION
+#<=====================================================>
+*/
 const checkbox = document.getElementById('checkbox');
 const bottomNav = document.querySelector('.bottom-nav');
 const windowWidth = window.innerWidth;
 checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-        if (windowWidth <= 850) {
-            bottomNav.style.height = "auto";
-            console.log(windowWidth);
-        } else if (windowWidth > 850) {
-            bottomNav.style.height = "6.5rem";
-            console.log(windowWidth);
-        }
-        bottomNav.classList.remove('display');
-    } else {
-        bottomNav.classList.add('display');
+    if (bottomNav) {
+        bottomNav.classList.toggle('height');
     }
-});
+})
+// checkbox.addEventListener('change', () => {
+//     if (checkbox.checked) {
+//         if (windowWidth <= 850) {
+//             bottomNav.style.height = "auto";
+//             console.log(windowWidth);
+//         } else if (windowWidth > 850) {
+//             bottomNav.style.height = "6.5rem";
+//             console.log(windowWidth);
+//         }
+//         bottomNav.classList.remove('display');
+//     } else {
+//         bottomNav.classList.add('display');
+//     }
+// });
 
 /*
 #<=====================================================>

@@ -541,7 +541,6 @@ img {
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
   width: 95.5%;
   background-color: #fafafa;
   height: 6.5rem;
@@ -562,27 +561,28 @@ img {
   display: flex;
   justify-content: flex-start;
   align-self: center;
-  position: fixed;
-  top: calc(80px + 6.5rem);
-  padding: 0 3.5rem;
-  height: 6.5rem;
+  position: absolute;
+  display: none;
+  top: 6.5rem;
+  left: 50%;
   height: 0;
-  overflow: visible;
+  transition: all 0.2s;
+  padding: 0 3.5rem;
   background-color: #fafafa;
   z-index: 5001;
-  width: 95.5%;
-  left: 50%;
+  width: 100%;
   transform: translateX(-50%);
   border-top: 1px solid #ddd;
 }
 @media screen and (max-width: 980px) {
   .bottom-nav {
-    top: calc(20px + 6.5rem);
+    top: 6.5rem;
   }
 }
 
 .height {
   height: 6.5rem;
+  display: block;
 }
 
 .display {
@@ -619,6 +619,10 @@ img {
   column-gap: 2rem;
   list-style: none;
 }
+.bottom-nav .links a {
+  color: #0f0f0f;
+  text-transform: uppercase;
+}
 @media screen and (max-width: 850px) {
   .bottom-nav .links {
     flex-direction: column;
@@ -629,10 +633,6 @@ img {
 }
 .bottom-nav .links .links_item {
   padding: 3rem 0;
-}
-.bottom-nav a {
-  color: #000;
-  text-transform: uppercase;
 }
 
 .top-nav .links {
@@ -681,9 +681,6 @@ img {
 #<=====================================================>
 */
 .links_item:hover .sub_links {
-  position: absolute;
-  left: 0;
-  top: 100px;
   display: block;
   display: flex;
   justify-content: start;
@@ -693,8 +690,11 @@ img {
 }
 
 .sub_links {
+  position: absolute;
+  top: calc(6.5rem - 1px);
+  left: 0;
   display: none;
-  transition: all 1s;
+  transition: all 0.2s;
   /*#<============[bikes]============>#*/
 }
 .sub_links .sub_links_left {
