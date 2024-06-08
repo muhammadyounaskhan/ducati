@@ -27,11 +27,21 @@ setInterval(() => {
 */
 const checkbox = document.getElementById('checkbox');
 const bottomNav = document.querySelector('.bottom-nav');
+const floatedNav = document.getElementById('floatedNav');
+const overlay = document.getElementById('overlay-body');
+
 const windowWidth = window.innerWidth;
 checkbox.addEventListener('change', () => {
     if (bottomNav) {
         bottomNav.classList.toggle('height');
+        /*#<============[Overlay Activation Code]============>#*/
+        overlay.classList.toggle('show');
     }
+});
+overlay.addEventListener('click', () => {
+    overlay.classList.toggle('show');
+    checkbox.checked = false;
+    bottomNav.classList.toggle('height');
 })
 // checkbox.addEventListener('change', () => {
 //     if (checkbox.checked) {
@@ -47,8 +57,8 @@ checkbox.addEventListener('change', () => {
 //         bottomNav.classList.add('display');
 //     }
 // });
-
 /*
+
 #<=====================================================>
 #                 TESTIMONIAL SECTION CODE
 #<=====================================================>
@@ -87,7 +97,7 @@ dot2.addEventListener('click', () => {
 
 /*
 #<=====================================================>
-#                 Shoping Card JavaScript
+#                 Shopping Card JavaScript
 #<=====================================================>
 */
 

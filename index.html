@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Ducati</title>
 </head>
-<bo>
+<body>
+    <div class="overlay-body" id="overlay-body"></div>
     <nav class="nav">
         <div class="left">
             <svg viewBox="0 0 80 29" id="logo-scrambler"
@@ -66,11 +67,12 @@
                 </div>
             </div>
         </div>
-        <section class="floated-nav">
+        <section class="floated-nav modal" id="floatedNav">
             <nav class="top-nav">
                 <div class="nav-left">
                     <div class="hamburger">
-                        <input type="checkbox" id="checkbox">
+                        <input type="checkbox" id="checkbox"
+                             class="openCloseModal">
                         <label for="checkbox" class="toggle">
                             <div class="bars" id="bar1"></div>
                             <div class="bars" id="bar2"></div>
@@ -1049,5 +1051,5 @@
         </div>
     </section>
     <script src=" script.js"></script>
-    </body>
+</body>
 </html>

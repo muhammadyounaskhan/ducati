@@ -537,6 +537,11 @@ img {
   }
 }
 
+/*
+#<=====================================================>
+#                 Floated Navigation
+#<=====================================================>
+*/
 .floated-nav {
   display: flex;
   align-items: center;
@@ -714,7 +719,7 @@ img {
 }
 .sub_links .sub_link_content {
   padding: 2rem;
-  min-height: 300px;
+  min-height: 200px;
   background-color: #ebebeb;
 }
 .sub_links .sub_link_title {
@@ -744,6 +749,30 @@ img {
   font-weight: 500;
   color: #0f0f0f;
   text-transform: capitalize;
+}
+
+/*
+#<=====================================================>
+#                 Overlay body
+#<=====================================================>
+*/
+body {
+  position: relative;
+}
+
+.overlay-body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 500;
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 .footer {
