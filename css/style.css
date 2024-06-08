@@ -501,11 +501,13 @@ img {
   text-transform: uppercase;
 }
 .right .my-ducati {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
   padding-left: 2rem;
+  cursor: pointer;
 }
 .right svg {
   width: 20px;
@@ -555,7 +557,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 1.5rem;
-  z-index: 4000;
+  z-index: 10;
 }
 @media screen and (max-width: 980px) {
   .floated-nav {
@@ -579,11 +581,6 @@ img {
   width: 100%;
   transform: translateX(-50%);
   border-top: 1px solid #ddd;
-}
-@media screen and (max-width: 980px) {
-  .bottom-nav {
-    top: 6.5rem;
-  }
 }
 
 .height {
@@ -628,14 +625,6 @@ img {
 .bottom-nav .links a {
   color: #0f0f0f;
   text-transform: uppercase;
-}
-@media screen and (max-width: 850px) {
-  .bottom-nav .links {
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 2rem;
-    padding: 2rem 0.5rem;
-  }
 }
 .bottom-nav .links .links_item {
   padding: 3rem 0;
@@ -737,6 +726,7 @@ img {
   display: flex;
   flex-direction: column;
   row-gap: 0.8rem;
+  min-width: auto;
 }
 .sub_links .bike_title {
   font-size: 1rem;
@@ -749,6 +739,7 @@ img {
   font-weight: 500;
   color: #0f0f0f;
   text-transform: capitalize;
+  min-width: 100px;
 }
 
 /*
@@ -766,13 +757,57 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 500;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
   display: none;
 }
 
+.height-2 {
+  height: 26rem;
+}
+
 .show {
-  display: block;
+  display: block !important;
+}
+
+/*#<============[Panel]============>#*/
+.z-index {
+  z-index: 20;
+}
+
+.registeration_panel {
+  position: absolute;
+  top: 150%;
+  left: -30%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 400;
+  display: none;
+  background-color: #fdfdfd;
+  width: 200px;
+  height: auto;
+  padding: 1rem;
+}
+.registeration_panel::before {
+  content: "";
+  content: "";
+  position: absolute;
+  top: -19px;
+  right: 27%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  z-index: 400;
+  border-color: transparent transparent #fdfdfd transparent;
+}
+.registeration_panel .panel_item {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.registeration_panel .panel_item a {
+  color: #0f0f0f;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .footer {
@@ -1746,7 +1781,7 @@ body {
   position: absolute;
   top: -30px;
   left: 10px;
-  z-index: 300;
+  z-index: 5;
 }
 
 .grey-border-btn {

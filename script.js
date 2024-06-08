@@ -33,6 +33,7 @@ const overlay = document.getElementById('overlay-body');
 const windowWidth = window.innerWidth;
 checkbox.addEventListener('change', () => {
     if (bottomNav) {
+
         bottomNav.classList.toggle('height');
         /*#<============[Overlay Activation Code]============>#*/
         overlay.classList.toggle('show');
@@ -43,22 +44,20 @@ overlay.addEventListener('click', () => {
     checkbox.checked = false;
     bottomNav.classList.toggle('height');
 })
-// checkbox.addEventListener('change', () => {
-//     if (checkbox.checked) {
-//         if (windowWidth <= 850) {
-//             bottomNav.style.height = "auto";
-//             console.log(windowWidth);
-//         } else if (windowWidth > 850) {
-//             bottomNav.style.height = "6.5rem";
-//             console.log(windowWidth);
-//         }
-//         bottomNav.classList.remove('display');
-//     } else {
-//         bottomNav.classList.add('display');
-//     }
-// });
-/*
 
+/*
+#<=====================================================>
+#                 Registeration Overlay
+#<=====================================================>
+*/
+const myducati = document.querySelector('.my-ducati');
+const RegisterationPanel = document.querySelector('.registeration_panel');
+myducati.addEventListener('click', () => {
+    overlay.classList.toggle('show');
+    overlay.classList.toggle('z-index');
+    RegisterationPanel.classList.toggle('show');
+})
+/*
 #<=====================================================>
 #                 TESTIMONIAL SECTION CODE
 #<=====================================================>
