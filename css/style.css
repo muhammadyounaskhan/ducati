@@ -700,10 +700,12 @@ img {
 }
 .sub_links .sub_links_left {
   padding-bottom: 2rem;
-  width: 80%;
+  flex: 1 1 500px;
+  width: 75%;
   padding: 3.5rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   column-gap: 2rem;
   row-gap: 2rem;
 }
@@ -711,9 +713,16 @@ img {
   display: none;
 }
 .sub_links .sub_links_right {
-  width: 22%;
+  flex: 0 0 300px;
+  width: 25%;
+}
+.sub_links .side_link_img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .sub_links .sub_link_content {
+  width: 100%;
   padding: 2rem;
   min-height: 200px;
   background-color: #ebebeb;
