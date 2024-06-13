@@ -8,6 +8,7 @@
 # Don't ignore the css folder and its contents
 !/css/
 !/css/**
+!/sass/
 !/sass/**
 !/package.json
 !/package-lock.json
